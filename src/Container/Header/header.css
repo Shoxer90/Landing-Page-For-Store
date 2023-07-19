@@ -1,0 +1,55 @@
+*{
+  margin:0;
+  font-family: -apple-system, "BlinkMacSystemFont", 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+.containerXX{
+  width: 100vw;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0px 20px;
+  border-bottom: 1px solid rgb(211, 209, 209);
+  box-shadow: 0 1px 6px 0px darkseagreen;
+
+}
+.routeName{
+  padding: 0;
+  margin: 0;
+}
+
+.containerXX .contentX{
+  display: flex;
+  justify-content: space-between;
+  max-height: fit-content;
+  padding: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+.headerLinkBtn{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.headerLinkBtn h6{
+  margin: 0 13px;
+}
+@media screen and (max-width: 785px){
+  .containerXX{
+    margin-bottom: 15px;
+  }
+  .headerLinkBtn h6{
+    margin: 0 5px;
+  }
+  .routeName{
+    display: none;
+    overflow: hidden;
+  }
+}

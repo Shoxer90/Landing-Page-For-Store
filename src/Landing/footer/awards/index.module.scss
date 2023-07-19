@@ -1,0 +1,10 @@
+.awards{
+  margin: 20px;
+  display:flex;
+  flex-direction: column;
+  &_img{
+    height: auto;
+    margin: 5px;
+    font-size: 50%;
+  }
+}

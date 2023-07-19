@@ -1,0 +1,21 @@
+.faqDiv {
+  display: flex;
+  flex-flow:row;
+  justify-content: space-around;
+  align-self: center;
+  background-image: radial-gradient(#255c48, #3FB68A);
+  min-height: 300px;
+  padding: 10px;
+  width: 95%;
+  border-radius: 15px;
+  color:white;
+  transition: height 500ms ;
+  text-align: start;
+  margin: 40px;
+  &_content{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-self: center;
+  }
+} 
