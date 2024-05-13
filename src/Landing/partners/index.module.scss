@@ -1,0 +1,19 @@
+.partner_div{
+  display: flex;
+  height : 150px;
+  align-items: center;
+  justify-content: center;
+  &_img{
+    width: 150px;
+    border-radius: 5px;
+  }
+}
+.alice_carousel {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  direction: ltr;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}

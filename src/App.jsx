@@ -13,6 +13,7 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="*" element={ <LandingPage t={t} /> } />
+        {/* <Route path="*" element={ <CvJs t={t} /> } /> */}
       </Routes> 
     </div>
   );

@@ -2,18 +2,10 @@ import React, { memo } from "react";
 
 import { motion } from "framer-motion";
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { Card } from "@mui/material";
+import PriceListRow from "./priceListRow";
 
-function createData(name, calories) {
-  return { name, calories };
-};
+import styles from "./index.module.scss";
 
 const tableAnimation = {
   hidden:{
@@ -28,50 +20,65 @@ const tableAnimation = {
  };
 
 const PriceTable = ({t}) => {
-
-  const rows = [
-    createData(t("landing.priceListRow1"), t("landing.priceListFree")),
-    createData(t("landing.priceListRow2"), t("landing.priceListFree")),
-    createData(t("landing.priceListRow3"), 5),
-    createData(t("landing.priceListRow4"), t("landing.priceListUnlimit")),
-    createData(t("landing.priceListRow5"), t("landing.priceListUnlimit")),
-    createData(t("landing.priceListRow6"), `2500 ${t("units.amd")} *`),
-    createData(t("landing.priceListRow7"), `10 ${t("units.amd")}`),
-    createData(t("landing.priceListRow8"), `10 ${t("units.amd")}`),
-    createData(t("landing.priceListRow9"), `${t("landing.priceListFree")} **`),
+  const priceTable = [
+    {
+      text: <p className={styles.prices_subtitle}>{t("landing.priceListSubTitle1")}</p>,
+      price: <p className={styles.prices_subtitle}>{ t("landing.priceListSubTitle2")}*</p>,
+    },
+    {
+      text: t("landing.priceListRow1"),
+      price:  t("landing.priceListFree"),
+    },
+    {
+      text: t("landing.priceListRow2"),
+      price:  t("landing.priceListFree"),
+    },
+    {
+      text: t("landing.priceListRow3"),
+      price: `6000 ${t("units.amd")}`,
+    },
+    {
+      text: t("landing.priceListRow4"),
+      price:  t("landing.priceListUnlimit"),
+    },
+    {
+      text: t("landing.priceListRow5"),
+      price: t("landing.priceListUnlimit"),
+    },
+    {
+      text: t("landing.priceListRow6"),
+      price: `3000 ${t("units.amd")} **`,
+    },
+    {
+      text: t("landing.priceListRow7"),
+      price: `12 ${t("units.amd")}`,
+    },
+    {
+      text: t("landing.priceListRow8"),
+      price: `10 ${t("units.amd")}`,
+    },
+    {
+      text: t("landing.priceListRow9"),
+      price: `${t("landing.priceListFree")} ***`,
+    },
   ];
 
   return (
     <motion.div 
       initial="hidden"
       whileInView="visible"
-      variants={tableAnimation}
+      variants={tableAnimation}  
       custom={1.2}
+      className={styles.container}
     >
       <Card sx={{boxShadow:12}}>
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-            <TableHead>
-              <TableRow>
-                <TableCell><strong>{t("landing.priceListSubTitle1")}</strong></TableCell>
-                <TableCell align="right"><strong>{t("landing.priceListSubTitle2")}</strong></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell>
-                  <TableCell align="right">{row.calories}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <div className={styles.prices} >
+          {
+           priceTable.map((item, i) => {
+           return <PriceListRow {...item} key={i} />
+           })
+          }
+        </div>
       </Card>
     </motion.div>
   )

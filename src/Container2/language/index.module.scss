@@ -5,10 +5,12 @@
     &_block{
         display: flex;
         justify-content: space-around;
-        padding: 0px 40px;
+        // padding: 0px 40px;
+        // padding: 0px 40px;
         margin: 5px;
-        width: 270px;
+        width: 170px;
         align-self: center;
+        align-items: center;
     }
 }
 .active{

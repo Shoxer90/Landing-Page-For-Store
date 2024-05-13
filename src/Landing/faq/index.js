@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import styles from "./index.module.scss";
 import { PageTitle } from '../title';
-import PayXInfo from '../../Container2/social/PayXInfo';
 import FAQContentItem from '../content/FAQContentItem';
 import { FAQ } from '../LandingTextData';
 import { motion } from "framer-motion";
@@ -49,29 +48,47 @@ const FrequentlyAskedQuestions = ({t}) => {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      className={styles.faqDiv} 
+       style={{paddingTop:"90px"}}
       id="section-4">
-      <motion.img  variants={leftTextAnumation} custom={1} src='/QAPH.png' alt="" style={{height:"390px",alignSelf:"center"}} />
+      <motion.div className={styles.faqDiv} variants={rightTextAnumation} custom={1.3} >
+        <motion.img  variants={leftTextAnumation} custom={1} src='/QAPH.png' alt="" style={{height:"390px",alignSelf:"center"}} />
+        <div className={styles.faqDiv_content}> 
+        <Accordion style={{backgroundColor: "transparent",color:"white", boxShadow:"none" }}>
+        <AccordionSummary>
+        <motion.div  variants={leftTextAnumation} custom={1.5} >
+          <PageTitle title={t("landing.FAQ2")} />
+        </motion.div>
 
-      <motion.div  variants={rightTextAnumation} custom={1} className={styles.faqDiv_content}>
+        </AccordionSummary>
+        <AccordionDetails>
+          {FAQ.map((block, i) => (
+            <motion.div  variants={rightTextAnumation} custom={i*0.3} >
+              <Accordion style={{backgroundColor: "transparent",color:"white", boxShadow:"none" }}>
+              <AccordionSummary>
+                  <div><strong>{i+1}. {t(`${block?.question}`)}</strong></div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <FAQContentItem key={i}{...block} t={t} index={i+1}/>
+                </AccordionDetails>
+              </Accordion>
+            </motion.div> 
+          ))}
+        </AccordionDetails>
 
-        <Accordion style={{backgroundColor: "transparent", color:"white", boxShadow:"none" }}>
-         <AccordionSummary style={{display:"flex",flexFlow:"column"}}>
-            <div>
-              <PageTitle title={t("landing.FAQ2")} />
-            </div>
-          </AccordionSummary>
-          <AccordionDetails>
-            {FAQ.map((block, i) => (
-              <FAQContentItem key={i}{...block} t={t} index={i+1}/>
-            ))}
-
-          <p>{t("landing.faqEnd")}</p>
-          <PayXInfo />
-
-          </AccordionDetails>
         </Accordion>
-
+        {/* {FAQ.map((block, i) => (
+          <motion.div  variants={rightTextAnumation} custom={i*0.3} >
+            <Accordion style={{backgroundColor: "transparent",color:"white", boxShadow:"none" }}>
+            <AccordionSummary>
+                <div><strong>{i+1}. {t(`${block?.question}`)}</strong></div>
+              </AccordionSummary>
+              <AccordionDetails>
+                <FAQContentItem key={i}{...block} t={t} index={i+1}/>
+              </AccordionDetails>
+            </Accordion>
+          </motion.div> 
+        ))} */}
+        </div>
       </motion.div>
     </motion.div>
   )

@@ -1,16 +1,65 @@
+.container{
+  max-width: 1200px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  font-size: 100%;
+  margin: auto
+}
+
 .prices{
-    width: 100%;
-    display: flex;
-    flex-flow: row;
-    margin: 20px;
-    justify-content: space-around;
-    // padding-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  flex-flow:column;
+  padding: 20px;
+  
 }
 .annotation{
     display: flex;
     flex-flow: column nowrap;
-    text-align: left;
     margin: 10px 20px;
     font-size: 80%;
-    padding-bottom: 150px;
 }
+.priceList{
+  &_row{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 110%;
+    font-weight: 600;
+    padding: 4px;
+    color: rgb(19, 103, 92),
+  }
+}
+.prices_subtitle{
+ font-size: 130%;
+ color: rgb(19, 103, 92);
+ font-weight: 600;
+}
+
+
+@media screen and (max-width:850px) {
+  .container{
+    font-size: 100%;
+    width: 100%;
+  }
+  .prices{
+    padding: 10px;
+  }
+  .prices_subtitle{
+    font-size: 110%;
+   }
+}
+
+@media screen and (max-width:600px) {
+  .prices{
+    font-size: 90%;
+  }
+  .prices_subtitle{
+    font-size: 100%;
+   }
+}
+

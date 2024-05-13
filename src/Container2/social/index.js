@@ -32,7 +32,7 @@ const SocialMediaGroup = ({w}) => {
   ];
 
   return (
-    <span className={styles.socialContainer} style={{width:`${w}px`}}>
+    <div className={styles.socialContainer} style={{width:`${w}px`}}>
       {social && social.map((item,i) => (
         <SocialItem 
           key={i}
@@ -46,7 +46,7 @@ const SocialMediaGroup = ({w}) => {
           url={item?.link} 
         />
       ))}
-    </span>
+    </div>
   )
 };
 
