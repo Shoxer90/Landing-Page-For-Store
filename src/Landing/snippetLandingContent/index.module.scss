@@ -4,34 +4,93 @@
   justify-content: space-between;
   font-size: 120%;
   text-align: start;
+  &_image{
+    align-items: center;
+    align-content: center;
+      display: flex;
+      justify-content: center;
+    & img{
+      width:70%;
+    }
+  }    
   
   &_leftDiv{
     display: flex;
     flex-flow: column nowrap;
-    width: 50%;
+    width: 90%;
     &_item{
-      padding: 10px;
-      height: 200px;
+      height: fit-content;
       display: flex;
       flex-flow: column nowrap;
       align-items: start;
-      padding: 10px 50px;
-      left: 0px;
     }
-    
   }
   &_rightDiv{
     display: flex;
     flex-flow: column nowrap;
-    width: 50%;
+    width: 90%;
     &_item{
-      padding: 10px;
-      height: 200px;
+      height: fit-content;
       display: flex;
       flex-flow: column nowrap;
       align-items: start;
-      padding: 10px 50px;
-      left: 0px;
     }
   }
 } 
+
+.linkToDiv{
+  display: inline-block;
+  color: #3FB68A;
+  cursor: pointer;
+  font-size: 85%;
+  font-weight: 700;
+  padding: 0px 3px;
+    &:hover{
+    color: #3FB68A;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .opportunities{
+    &_leftDiv{
+      &_item{ 
+        font-size: 80%;
+      }
+    }
+    &_rightDiv{
+      &_item{
+        font-size: 80%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1310px) {
+  .opportunities{
+    &_leftDiv{
+      &_item{ 
+        font-size: 90%;
+      }
+    }
+    &_rightDiv{
+      &_item{
+        font-size: 90%;
+      }
+    }
+    &_image{
+      align-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .opportunities{
+    display: flex;
+    flex-flow: column;
+    &_leftDiv{
+      width: 100%;
+    }
+    &_rightDiv{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.carretteImg{
+  width: auto;
+  // height: 635px;
+  height: 80dvh;
+}
+
+.carret{
+  margin: 0px 0px 70px 0px;
+}
+
+.slider-control-bottomcenter{
+  & button{
+    margin: 20px; 
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .carretteImg{
+    height: 70dvh;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .carretteImg{
+    object-fit: cover;
+    height: 46dvh;
+    width: 100%;
+  }
+  .carret{
+    margin-bottom: 0px;
+  }
+}
+

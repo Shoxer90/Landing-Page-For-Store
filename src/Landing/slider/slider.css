@@ -1,0 +1,41 @@
+
+.slider-control-bottomcenter button{
+  margin: 0 20px; 
+}
+.slider-control-bottomcenter {
+  position: relative;
+ top: 40px; 
+};
+.paging-item button,
+.paging-item li{
+  height:200%;
+
+}
+.slider-control-centerleft button,
+.slider-control-centerright button{
+  font-size: 0px;
+  border-radius: 50%;
+}
+.alice-carousel__prev-btn span{ 
+  font-size:200%;
+  font-weight: 800;
+  color:#3FB68A;
+  opacity: .4;
+  position:absolute;
+  top:35%;
+  left: -10px;
+  /* left: 0px; */
+
+
+}
+.alice-carousel__next-btn span{
+  font-size:200%;
+  font-weight: 800;
+  color:#3FB68A;
+  opacity: .4;
+  position:absolute;
+  top:35%;
+  right:-10px;
+  /* right:0px; */
+
+}

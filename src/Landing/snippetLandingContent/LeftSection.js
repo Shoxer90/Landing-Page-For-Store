@@ -16,7 +16,7 @@ const leftTextAnumation = {
 }
 
 
-const LeftSection = ({ img, subtitle, text, t,i}) => {
+const LeftSection = ({ img, subtitle, text, t,linkText, link}) => {
   return (
     <motion.div 
       initial="hidden"
@@ -35,15 +35,26 @@ const LeftSection = ({ img, subtitle, text, t,i}) => {
           style={{fontSize:"110%",}}
           variants={leftTextAnumation}
           custom={1}
-        ><strong>{t(subtitle)}</strong></motion.span>
+        ><strong>{t(subtitle).toUpperCase()}</strong></motion.span>
       </div>
       <motion.span
         variants={leftTextAnumation}
         custom={1.2}
-        style={{color:"grey",fontSize:"90%"}}
+        style={{color:"grey",fontSize:"85%"}}
       >
         {t(text)}
       </motion.span>
+      {linkText &&
+       <motion.a 
+        className={styles.linkToDiv}
+        variants={leftTextAnumation} 
+        custom={1.2}
+        href={link}
+        target="_blank"
+      >
+       {t(linkText)}
+     </motion.a>
+     }
     </motion.div>
   )
 };

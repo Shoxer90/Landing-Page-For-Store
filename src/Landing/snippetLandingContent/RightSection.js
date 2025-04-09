@@ -14,7 +14,7 @@ const rightTextAnumation = {
   })
 }
 
-const RightSection = ({ img, subtitle, text, t}) => {
+const RightSection = ({ img, subtitle, text, t, tagText,setIsActive,clickAndScroll, link,linkText }) => {
   return (
     <motion.div 
       className={styles.opportunities_rightDiv_item}
@@ -28,9 +28,33 @@ const RightSection = ({ img, subtitle, text, t}) => {
           variants={rightTextAnumation} custom={0.8}
           style={{height:"50px",width:"50px"}} 
         />
-        <motion.span variants={rightTextAnumation} custom={1} style={{fontSize:"110%"}}><strong>{t(subtitle)}</strong></motion.span>
+        <motion.span variants={rightTextAnumation} custom={1} style={{fontSize:"110%"}}><strong>{t(subtitle).toUpperCase()}</strong></motion.span>
       </div>
-      <motion.span  variants={rightTextAnumation} custom={1.2}style={{color:"grey",fontSize:"90%"}}>{t(text)}</motion.span>
+      <motion.span variants={rightTextAnumation} custom={1.2}style={{color:"grey",fontSize:"85%"}}>{t(text)}</motion.span>
+      {tagText && 
+        <motion.span 
+          className={styles.linkToDiv}
+          variants={rightTextAnumation} 
+          custom={1.2}
+          onClick={()=>{
+            setIsActive(3)
+            clickAndScroll("section-3")
+          }}
+        >
+          {t(tagText)}
+        </motion.span>
+      }
+      {linkText &&
+       <motion.a 
+       className={styles.linkToDiv}
+       variants={rightTextAnumation} 
+       custom={1.2}
+       href={link}
+       target="_blank"
+     >
+       {t(linkText)}
+     </motion.a>
+      }
   </motion.div>
 
   )

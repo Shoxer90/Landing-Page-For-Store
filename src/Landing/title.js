@@ -4,12 +4,14 @@ import { forwardRef } from "react";
 
 export const PageTitle = forwardRef( ({title}, ref) => {
   const styling={
-    margin: "40px"
+    margin: "20px 0",
+    fontWeight: 600,
   }
   return (
-    <h2 ref={ref} style={styling}>
-      {title}
-    </h2>
+    <h1 ref={ref} style={styling}>
+      {/* {title} */}
+      {title.toUpperCase()}
+    </h1>
   )
 });
 

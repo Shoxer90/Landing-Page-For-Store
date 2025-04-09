@@ -30,7 +30,7 @@ const imgAnimation = {
 }
 
 
-const ContentSnippet = ({content,title,refId, t,imgURL}) => {
+const ContentSnippet = ({content,title,refId, t,imgURL, setIsActive, clickAndScroll}) => {
   return (
     <motion.div 
       initial="hidden"
@@ -47,7 +47,7 @@ const ContentSnippet = ({content,title,refId, t,imgURL}) => {
           <img src={imgURL} alt="phone"/>
         </motion.div>
         <div className={styles.opportunities_rightDiv}>
-          {content?.right.map((item,i) =><RightSection {...item} i={i} t={t}/>)}
+          {content?.right.map((item,i) =><RightSection setIsActive={ setIsActive} clickAndScroll={clickAndScroll} {...item} i={i} t={t}/>)}
         </div>
       </div>
     </motion.div>

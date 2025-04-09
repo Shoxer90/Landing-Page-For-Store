@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import PriceTable from "./table";
 
 import styles from "./index.module.scss";
-import { Button } from "@mui/material";
 import { MPageTitle } from "../title";
 const titleAnimation = {
   hidden:{
@@ -17,7 +16,7 @@ const titleAnimation = {
     transition: {delay: custom * 0.8}
   })
 }
- const MButton = motion(Button);
+//  const MButton = motion(Button);
  const annotationAnimation = {
   hidden:{
     x: 100,
@@ -37,22 +36,10 @@ const PriceList = ({t, setIsRegistrate}) => {
       id="section-3"
       initial="hidden"
       whileInView="visible"
-      style={{paddingTop:"70px",height:"90vh", margin:"40px 0px"}}
+      style={{paddingTop:"90px"}}
     >
       <MPageTitle variants={titleAnimation} custom={1} title={t("landing.priceListTitle")} />
-      <div className={styles.prices}>
-        <PriceTable t={t} />
-        <MButton
-          variants={annotationAnimation}
-          custom={2}
-          variant="contained"
-          onClick={()=> setIsRegistrate(1)}
-
-          sx={{height:"50px", width:"150px",borderRadius:"8px",margin:"auto 40px", background:"#3FB68A"}}
-        >
-          {t("authorize.registration")}
-        </MButton>
-      </div>
+      <PriceTable t={t} />
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -62,6 +49,7 @@ const PriceList = ({t, setIsRegistrate}) => {
       >
         <span>{t("landing.priceListStars1")}</span>
         <span>{t("landing.priceListStars2")}</span>
+        <span>{t("landing.priceListStars3")}</span>
       </motion.div>
     </motion.div>
   )

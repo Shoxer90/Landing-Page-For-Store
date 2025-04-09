@@ -1,6 +1,41 @@
 .presentation{
   display: flex;
+  margin-top: 40px;
   flex-flow: column wrap;
-  // background-color:lightblue;
+  &_image{
+    display:flex;
+    align-self: center; 
+    justify-content:center;
+         
+    & >img{
+      margin-right:20px;
+      width:20%;
+
+    }
+  }
+};
+
+@media screen and (max-width: 1310px) {
+  .presentation{
+    font-size: 80%;
+    margin-top: 10px;
+    & img{
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .presentation{
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .presentation{
+    & img{
+      width:40%;
+    }
+  }
 }
 
